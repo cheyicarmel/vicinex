@@ -1,0 +1,60 @@
+# ========================
+# SECRETS & ENVIRONNEMENT
+# ========================
+.env
+.env.local
+.env.*.local
+.env.production
+*.env
+
+# ========================
+# PYTHON / DJANGO
+# ========================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+venv/
+.venv/
+env/
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+staticfiles/
+mediafiles/
+
+# ========================
+# NODE / NEXT.JS
+# ========================
+node_modules/
+.next/
+out/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# ========================
+# DOCKER
+# ========================
+# On versionne docker-compose.yml mais pas les volumes locaux
+
+# ========================
+# SYSTEME
+# ========================
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.idea/
+.vscode/
+*.log
+
+# ========================
+# DIVERS
+# ========================
+*.sqlite3

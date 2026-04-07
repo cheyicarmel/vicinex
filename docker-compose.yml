@@ -1,0 +1,45 @@
+services:
+  db:
+    image: postgres:16
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-vicinex}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-vicinex}
+      POSTGRES_DB: ${POSTGRES_DB:-vicinex}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  backend:
+    build:
+      context: ./backend
+    restart: unless-stopped
+    env_file:
+      - ./backend/.env
+    volumes:
+      - ./backend:/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    command: python manage.py runserver 0.0.0.0:8000
+
+  frontend:
+    build:
+      context: ./frontend
+    restart: unless-stopped
+    env_file:
+      - ./frontend/.env.local
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+      - /app/.next
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    command: npm run dev
+
+volumes:
+  postgres_data:
