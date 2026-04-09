@@ -32,7 +32,7 @@ vicinex/
 - Node.js 20+
 - Python 3.12+
 - PostgreSQL 16+
-- Docker & Docker Compose (recommandé)
+- Docker
 
 ### Avec Docker (recommandé)
 
@@ -45,7 +45,7 @@ docker compose up --build
 
 ### Sans Docker
 
-Voir les README individuels :
+Voir les documentations individuels du frontend et du backend (elles sont vides pour l'instant) :
 - [`frontend/README.md`](./frontend/README.md)
 - [`backend/README.md`](./backend/README.md)
 
@@ -55,8 +55,7 @@ Voir les README individuels :
 |---|---|
 | `main` | Code stable — reflète la production |
 | `develop` | Intégration — fonctionnalités terminées en attente de release |
-| `feature/xxx` | Développement d'une fonctionnalité |
-| `fix/xxx` | Correction de bug |
+| `feature/xxx` | Développement d'une fonctionnalité (avancement par phase) |
 
 ## Statut du projet
 
