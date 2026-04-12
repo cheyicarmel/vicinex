@@ -1,5 +1,7 @@
 from pathlib import Path
 from decouple import config
+from datetime import timedelta
+
 
 # CHEMINS
 
@@ -34,7 +36,10 @@ INSTALLED_APPS = [
     'cloudinary',
     'cloudinary_storage',
 
-    # Applications Vicinex
+    # Mes applications Vicinex
+    'users',
+    'annonces',
+    'analytics',
     
 ]
 
@@ -43,7 +48,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'corsheaders.middleware.CorsMiddleware',  # doit être en haut
+    'corsheaders.middleware.CorsMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -123,7 +128,6 @@ REST_FRAMEWORK = {
 
 # JWT
 
-from datetime import timedelta
 
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=15),
@@ -181,3 +185,5 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 # DIVERS
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+AUTH_USER_MODEL = 'users.User'
