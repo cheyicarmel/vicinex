@@ -42,6 +42,8 @@ class User(AbstractBaseUser, PermissionsMixin):
     is_staff = models.BooleanField(default=False)
     is_banned = models.BooleanField(default=False)
     email_verified = models.BooleanField(default=False)
+    verification_token = models.CharField(max_length=255, blank=True, default='')
+    reset_token = models.CharField(max_length=255, blank=True, default='')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
