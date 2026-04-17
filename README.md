@@ -1,8 +1,7 @@
 # Vicinex
 
-> *du latin « vicinus » — le voisin, celui qui est proche*
 
-Plateforme de colocation au Bénin. Vicinex met en relation les personnes qui proposent un logement en colocation avec celles qui en recherchent un — sans inscription requise pour consulter et contacter.
+Plateforme de colocation au Bénin permettant de mettre en relation les personnes qui proposent un logement en colocation avec celles qui en recherchent un — sans inscription requise pour consulter et contacter.
 
 ---
 
@@ -15,8 +14,6 @@ Plateforme de colocation au Bénin. Vicinex met en relation les personnes qui pr
 | Base de données | PostgreSQL |
 | Carte interactive | Leaflet.js + OpenStreetMap |
 | Stockage photos | Cloudinary |
-| Déploiement frontend | Vercel |
-| Déploiement backend | VPS Linux (Hetzner) |
 
 ## Structure du repo
 
@@ -35,23 +32,20 @@ vicinex/
 - Node.js 20+
 - Python 3.12+
 - PostgreSQL 16+
-- Docker & Docker Compose (recommandé)
+- Docker
 
 ### Avec Docker (recommandé)
 
 ```bash
-git clone https://github.com/ton-username/vicinex.git
+git clone https://github.com/cheyicarmel/vicinex.git
 cd vicinex
 cp backend/.env.example backend/.env
 docker compose up --build
 ```
 
-L'API sera disponible sur `http://localhost:8000`  
-Le frontend sera disponible sur `http://localhost:3000`
-
 ### Sans Docker
 
-Voir les README individuels :
+Voir les documentations individuels du frontend et du backend (elles sont vides pour l'instant) :
 - [`frontend/README.md`](./frontend/README.md)
 - [`backend/README.md`](./backend/README.md)
 
@@ -61,12 +55,11 @@ Voir les README individuels :
 |---|---|
 | `main` | Code stable — reflète la production |
 | `develop` | Intégration — fonctionnalités terminées en attente de release |
-| `feature/xxx` | Développement d'une fonctionnalité |
-| `fix/xxx` | Correction de bug |
+| `feature/xxx` | Développement d'une fonctionnalité (avancement par phase) |
 
 ## Statut du projet
 
-🚧 En cours de développement — MVP
+En cours de développement
 
 ## Licence
 
